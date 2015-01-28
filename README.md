@@ -1,4 +1,5 @@
-# Python---General
+# Python
 Python stuff
 
-workshop is where I mess around to explore the language
+workshop
+  - where I mess around to explore the language
