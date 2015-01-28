@@ -1,0 +1,27 @@
+import Tkinter
+def click_submit():
+	name = name_field.get()
+	if language.get() == "fr":
+		current_greeting.set("Bonjour, " +name + "!")
+		name_field.delete(0, Tkinter.END)
+	else:
+		current_greeting.set("Hello, " + name + "!")
+		name_field.delete(0, Tkinter.END)
+my_window = Tkinter.Tk()
+my_window.title("GUI-Greeter")
+my_window.geometry("300x200+500+200")
+name_prompt = Tkinter.Label(my_window, text="What's your name?", height=2)
+name_prompt.pack()
+current_greeting = Tkinter.StringVar()
+current_greeting.set("")
+naming = Tkinter.Label(my_window, textvariable = current_greeting, height=3)
+naming.pack()
+name_field = Tkinter.Entry(my_window)
+name_field.pack()
+submit_button = Tkinter.Button(my_window, text="Submit", width=10, command = click_submit)
+submit_button.pack()
+language = Tkinter.StringVar()
+language.set("")
+Tkinter.Radiobutton(my_window, text = "English", value = "en", variable = language).pack()
+Tkinter.Radiobutton(my_window, text = "French", value = "fr", variable = language).pack()
+my_window.mainloop()
